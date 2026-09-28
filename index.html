@@ -73,7 +73,7 @@
   .card{position:relative;padding:18px 0 22px;border-bottom:1px solid var(--line);scroll-margin-top:24px}
   .card::before{content:"";position:absolute;left:-26px;top:27px;width:9px;height:9px;border-radius:50%;
     background:var(--c);box-shadow:0 0 0 3px var(--bg)}
-  .card:target{background:var(--hover)}
+  .card:target,.card.is-target{background:var(--hover)}
   .meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;font-size:.72rem;color:var(--muted)}
   .date{font-weight:500;color:var(--ink);letter-spacing:.04em}
   .tag{letter-spacing:.06em}
@@ -234,8 +234,11 @@
       all = data;
       render();
       if (location.hash) {
-        var target = document.getElementById(location.hash.slice(1));
-        if (target) target.scrollIntoView();
+        var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (target) {
+          target.classList.add('is-target');
+          target.scrollIntoView({ block: 'start' });
+        }
       }
     })
     .catch(function () {
