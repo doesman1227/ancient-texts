@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>古いほん ｜ m-note</title>
+<meta name="description" content="ピラミッド・テキスト、ギルガメシュ叙事詩、ハンムラビ法典から、仏典、論語、古事記まで。人類が書き残してきた古い文献を、年代順にたどる個人的なまとめノート。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --ink:#141414; --muted:#8f8f8f; --faint:#b9b9b9; --line:#e7e7e7; --hover:#f6f6f6;
+    --r-egypt:#b89a5e; --r-mesopotamia:#a8735a; --r-india:#b8574a; --r-china:#4f7a66;
+    --r-greece:#6f8499; --r-west-asia:#86607a; --r-japan:#44618f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0d0d0d; --ink:#f1f1f1; --muted:#8a8a8a; --faint:#5a5a5a; --line:#232323; --hover:#161616;
+      --r-egypt:#cdb27a; --r-mesopotamia:#c38d73; --r-india:#d27465; --r-china:#6f9c86;
+      --r-greece:#8ea3b8; --r-west-asia:#a67d99; --r-japan:#7190c0;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+  body{font-family:"Noto Sans JP",system-ui,sans-serif;background:var(--bg);color:var(--ink);
+    line-height:1.9;letter-spacing:.01em;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{max-width:46rem;margin:0 auto;padding:0 16px}
+  @media (min-width:640px){.wrap{padding:0 32px}}
+
+  header.site{display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:calc(env(safe-area-inset-top) + 20px) 0 20px}
+  .back{font-size:.75rem;color:var(--muted);text-decoration:none;letter-spacing:.06em}
+  .back:hover{color:var(--ink)}
+  .mark{font-family:"Noto Serif JP",serif;font-weight:600;font-size:.95rem;letter-spacing:.2em}
+
+  .hero{padding:56px 0 40px}
+  .kicker{font-size:.68rem;font-weight:700;letter-spacing:.28em;color:var(--muted);margin-bottom:16px}
+  h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(1.8rem,6vw,2.8rem);
+    letter-spacing:.08em;line-height:1.4}
+  .lead{margin-top:20px;color:var(--muted);font-size:.94rem;max-width:32em}
+
+  .filters{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;
+    display:grid;gap:12px}
+  .axis{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .axis-name{font-size:.68rem;letter-spacing:.2em;color:var(--muted);width:4.5em;flex:none}
+  .chip{font:inherit;font-size:.78rem;background:none;color:var(--muted);border:1px solid var(--line);
+    border-radius:999px;padding:3px 12px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+  .chip:hover{color:var(--ink);border-color:var(--muted)}
+  .chip[aria-pressed="true"]{color:var(--bg);background:var(--ink);border-color:var(--ink)}
+  .chip:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+  .chip .sw{display:inline-block;width:.55em;height:.55em;border-radius:50%;margin-right:.45em;
+    vertical-align:.08em;background:var(--c)}
+
+  .overview{padding:28px 0 8px}
+  .ov-title{font-size:.68rem;letter-spacing:.2em;color:var(--muted);margin-bottom:10px}
+  .ov-track{position:relative;border-top:1px solid var(--line);padding-top:10px}
+  .ov-row{position:relative;height:9px;margin-bottom:3px}
+  .ov-bar{position:absolute;top:0;height:9px;border-radius:2px;background:var(--c);opacity:.85;
+    display:block;min-width:4px}
+  .ov-bar:hover,.ov-bar:focus-visible{opacity:1;outline:1px solid var(--ink)}
+  .ov-scale{position:relative;height:1.4em;margin-top:6px;font-size:.62rem;color:var(--faint)}
+  .ov-scale span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+  .ov-scale span:first-child{transform:none}
+  .ov-scale span:last-child{transform:translateX(-100%)}
+
+  .timeline{position:relative;padding:32px 0 48px 28px}
+  .timeline::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:1px;background:var(--line)}
+  .tick{position:relative;font-family:"Noto Serif JP",serif;font-size:.85rem;color:var(--muted);
+    letter-spacing:.12em;margin:28px 0 14px}
+  .tick::before{content:"";position:absolute;left:-26px;top:50%;width:11px;height:1px;background:var(--muted)}
+  .card{position:relative;padding:18px 0 22px;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+  .card::before{content:"";position:absolute;left:-26px;top:27px;width:9px;height:9px;border-radius:50%;
+    background:var(--c);box-shadow:0 0 0 3px var(--bg)}
+  .card:target{background:var(--hover)}
+  .meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;font-size:.72rem;color:var(--muted)}
+  .date{font-weight:500;color:var(--ink);letter-spacing:.04em}
+  .tag{letter-spacing:.06em}
+  .tag.region{color:var(--c)}
+  .card h2{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.2rem;margin-top:6px;line-height:1.5}
+  .orig{font-size:.72rem;color:var(--faint);margin-top:2px}
+  .summary{font-size:.9rem;margin-top:8px}
+  .quote{font-family:"Noto Serif JP",serif;font-size:.86rem;color:var(--muted);margin-top:10px;
+    padding-left:12px;border-left:2px solid var(--c)}
+  .more{display:inline-block;margin-top:12px;font-size:.8rem;text-decoration:none;
+    border-bottom:1px solid var(--muted)}
+  .more:hover{border-color:var(--ink)}
+  .soon{display:inline-block;margin-top:12px;font-size:.75rem;color:var(--faint)}
+  .notice{padding:32px 0;color:var(--muted);font-size:.9rem}
+
+  footer.site{border-top:1px solid var(--line);padding:32px 0 calc(env(safe-area-inset-bottom) + 40px);
+    font-size:.78rem;color:var(--muted);display:grid;gap:12px}
+
+  @media (max-width:480px){
+    .timeline{padding-left:20px}
+    .timeline::before{left:4px}
+    .card::before{left:-20px;width:7px;height:7px}
+    .tick::before{left:-16px;width:8px}
+    .axis-name{width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="back" href="../">← m-note トップ</a>
+    <span class="mark">古いほん</span>
+  </header>
+
+  <section class="hero">
+    <p class="kicker">ANCIENT TEXTS</p>
+    <h1>古いほん</h1>
+    <p class="lead">人類が文字で書き残したいちばん古い層から、時代の順にたどる。石の壁、粘土板、パピルス、竹簡に残された言葉のノートです。</p>
+  </section>
+
+  <section class="filters" aria-label="絞り込み">
+    <div class="axis" id="f-region"><span class="axis-name">地域</span></div>
+    <div class="axis" id="f-genre"><span class="axis-name">ジャンル</span></div>
+  </section>
+
+  <section class="overview" aria-label="全体図">
+    <p class="ov-title">全体図(前2500年〜後1000年)</p>
+    <div class="ov-track" id="ov-track"></div>
+    <div class="ov-scale" id="ov-scale"></div>
+  </section>
+
+  <main class="timeline" id="timeline" aria-live="polite">
+    <p class="notice">読み込み中…</p>
+  </main>
+
+  <footer class="site">
+    <p>年代や成立の事情には諸説あるものが多く、ここでは一般的な通説に沿って書いています。引用は、既存の翻訳を参考にした自分なりの訳や要旨です。</p>
+    <p>専門家ではない個人が、学びながらつくっている個人的なまとめです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="../">← m-note トップ</a></p>
+  </footer>
+</div>
+
+<script src="timeline.js"></script>
+<script>
+(function () {
+  'use strict';
+  var T = window.Timeline;
+  var state = { regions: [], genres: [] };
+  var all = [];
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function color(region) { return 'var(--r-' + region + ')'; }
+
+  function buildAxis(el, key, values, labels, withColor) {
+    var html = '<button class="chip" type="button" data-all="1" aria-pressed="true">すべて</button>';
+    values.forEach(function (v) {
+      html += '<button class="chip" type="button" data-value="' + v + '" aria-pressed="false"' +
+        (withColor ? ' style="--c:' + color(v) + '"' : '') + '>' +
+        (withColor ? '<span class="sw"></span>' : '') + esc(labels[v]) + '</button>';
+    });
+    el.insertAdjacentHTML('beforeend', html);
+    el.addEventListener('click', function (e) {
+      var b = e.target.closest('.chip');
+      if (!b) return;
+      if (b.dataset.all) {
+        state[key] = [];
+      } else {
+        var v = b.dataset.value;
+        var i = state[key].indexOf(v);
+        if (i === -1) state[key].push(v); else state[key].splice(i, 1);
+      }
+      el.querySelectorAll('.chip').forEach(function (c) {
+        var on = c.dataset.all ? state[key].length === 0 : state[key].indexOf(c.dataset.value) !== -1;
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      render();
+    });
+  }
+
+  function cardHTML(t) {
+    var genres = t.genres.map(function (g) {
+      return '<span class="tag">' + esc(T.GENRE_LABELS[g]) + '</span>';
+    }).join('');
+    return '<article class="card" id="' + esc(t.id) + '" style="--c:' + color(t.region) + '">' +
+      '<div class="meta"><span class="date">' + esc(t.dateLabel) + '</span>' +
+      '<span class="tag region">' + esc(T.REGION_LABELS[t.region]) + '</span>' + genres + '</div>' +
+      '<h2>' + esc(t.title) + '</h2>' +
+      (t.titleOriginal ? '<p class="orig">' + esc(t.titleOriginal) + '</p>' : '') +
+      '<p class="summary">' + esc(t.summary) + '</p>' +
+      '<p class="quote">' + esc(t.quote) + '</p>' +
+      (t.article ? '<a class="more" href="' + esc(t.article) + '">詳しく読む →</a>'
+                 : '<span class="soon">解説準備中</span>') +
+      '</article>';
+  }
+
+  function render() {
+    var shown = T.sortTexts(T.filterTexts(all, state.regions, state.genres));
+    var tl = document.getElementById('timeline');
+    if (shown.length === 0) {
+      tl.innerHTML = '<p class="notice">該当する文献はありません。</p>';
+    } else {
+      tl.innerHTML = T.withTicks(shown).map(function (item) {
+        return item.type === 'tick'
+          ? '<p class="tick">' + T.formatYear(item.year) + '</p>'
+          : cardHTML(item.text);
+      }).join('');
+    }
+    document.getElementById('ov-track').innerHTML = shown.map(function (t) {
+      var s = T.spanPercent(t);
+      return '<div class="ov-row"><a class="ov-bar" href="#' + esc(t.id) + '" title="' +
+        esc(t.title + '(' + t.dateLabel + ')') + '" aria-label="' + esc(t.title) +
+        '" style="left:' + s.left + '%;width:' + s.width + '%;--c:' + color(t.region) + '"></a></div>';
+    }).join('');
+  }
+
+  function buildScale() {
+    var total = T.RANGE.to - T.RANGE.from;
+    document.getElementById('ov-scale').innerHTML = T.TICKS
+      .filter(function (y, i) { return i % 2 === 0 || y === T.RANGE.to; })
+      .map(function (y) {
+        return '<span style="left:' + ((y - T.RANGE.from) / total * 100) + '%">' + T.formatYear(y) + '</span>';
+      }).join('');
+  }
+
+  buildAxis(document.getElementById('f-region'), 'regions', T.REGIONS, T.REGION_LABELS, true);
+  buildAxis(document.getElementById('f-genre'), 'genres', T.GENRES, T.GENRE_LABELS, false);
+  buildScale();
+
+  fetch('texts.json')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) {
+      var errors = T.validateTexts(data);
+      if (errors.length) console.warn('texts.json:', errors);
+      all = data;
+      render();
+      if (location.hash) {
+        var target = document.getElementById(location.hash.slice(1));
+        if (target) target.scrollIntoView();
+      }
+    })
+    .catch(function () {
+      document.getElementById('timeline').innerHTML = '<p class="notice">データを読み込めませんでした。</p>';
+    });
+})();
+</script>
+</body>
+</html>
