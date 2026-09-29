@@ -44,7 +44,7 @@
   .filters{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;
     display:grid;gap:12px}
   .axis{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-  .axis-name{font-size:.68rem;letter-spacing:.2em;color:var(--muted);width:4.5em;flex:none}
+  .axis-name{font-size:.68rem;letter-spacing:.2em;color:var(--muted);width:5.5em;flex:none}
   .chip{font:inherit;font-size:.78rem;background:none;color:var(--muted);border:1px solid var(--line);
     border-radius:999px;padding:3px 12px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
   .chip:hover{color:var(--ink);border-color:var(--muted)}
@@ -226,6 +226,19 @@
   buildAxis(document.getElementById('f-genre'), 'genres', T.GENRES, T.GENRE_LABELS, false);
   buildScale();
 
+  function highlightFromHash() {
+    try {
+      if (!location.hash) return;
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (!target) return;
+      var prev = document.querySelector('.is-target');
+      if (prev) prev.classList.remove('is-target');
+      target.classList.add('is-target');
+    } catch (e) {}
+  }
+
+  window.addEventListener('hashchange', highlightFromHash);
+
   fetch('texts.json')
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (data) {
@@ -233,15 +246,16 @@
       if (errors.length) console.warn('texts.json:', errors);
       all = data;
       render();
+      highlightFromHash();
       if (location.hash) {
-        var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-        if (target) {
-          target.classList.add('is-target');
-          target.scrollIntoView({ block: 'start' });
-        }
+        try {
+          var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+          if (target) target.scrollIntoView({ block: 'start' });
+        } catch (e) {}
       }
     })
-    .catch(function () {
+    .catch(function (e) {
+      console.error(e);
       document.getElementById('timeline').innerHTML = '<p class="notice">データを読み込めませんでした。</p>';
     });
 })();
