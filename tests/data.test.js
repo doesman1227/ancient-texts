@@ -11,19 +11,20 @@ test('texts.json が検証を通る', () => {
   assert.deepEqual(T.validateTexts(texts), []);
 });
 
-test('初回の16件がそろっている', () => {
+test('21件がそろっている', () => {
   const ids = texts.map(t => t.id).sort();
   assert.deepEqual(ids, [
-    'analects', 'book-of-the-dead', 'dhammapada', 'enuma-elish', 'gilgamesh', 'hammurabi',
-    'heart-sutra', 'hebrew-bible', 'iliad', 'kojiki-nihonshoki', 'laozi', 'lotus-sutra',
-    'odyssey', 'pyramid-texts', 'rigveda', 'suttanipata'
+    'aesop', 'analects', 'book-of-the-dead', 'dhammapada', 'enuma-elish', 'gilgamesh',
+    'hammurabi', 'heart-sutra', 'hebrew-bible', 'iliad', 'jataka', 'kojiki-nihonshoki',
+    'laozi', 'lotus-sutra', 'new-testament', 'nihon-ryoiki', 'odyssey', 'pyramid-texts',
+    'rigveda', 'suttanipata', 'theogony'
   ]);
 });
 
-test('年表の先頭はピラミッド・テキスト、最後は古事記・日本書紀', () => {
+test('年表の先頭はピラミッド・テキスト、最後は日本霊異記', () => {
   const sorted = T.sortTexts(texts);
   assert.equal(sorted[0].id, 'pyramid-texts');
-  assert.equal(sorted[sorted.length - 1].id, 'kojiki-nihonshoki');
+  assert.equal(sorted[sorted.length - 1].id, 'nihon-ryoiki');
 });
 
 test('article に書かれた記事ファイルが実在する', () => {

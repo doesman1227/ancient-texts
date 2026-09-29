@@ -206,5 +206,70 @@
     "summary": "天地のはじまりの神話から天皇の系譜までを記した日本最古の歴史書。古事記は物語風、日本書紀は正史として編年体で書かれる。",
     "quote": "天と地が初めて分かれたとき、高天原に現れた神の名は…(古事記冒頭の要旨)",
     "article": ""
+  },
+  {
+    "id": "theogony",
+    "title": "神統記",
+    "titleOriginal": "Θεογονία(ヘシオドス)",
+    "yearFrom": -700, "yearTo": -700,
+    "dateLabel": "前700年ごろ",
+    "region": "greece", "genres": ["myth"],
+    "language": "古代ギリシャ語",
+    "medium": "口承(のちに写本)",
+    "summary": "詩人ヘシオドスが、混沌(カオス)から大地や天が生まれ、神々の世代交代を経てゼウスの支配が確立するまでを歌った叙事詩。ギリシャ神話の系譜の骨組みを伝える。",
+    "quote": "まずはじめにカオスが生じた。(要旨)",
+    "article": "texts/theogony.html"
+  },
+  {
+    "id": "aesop",
+    "title": "イソップ寓話",
+    "titleOriginal": "Αἰσώπου μῦθοι",
+    "yearFrom": -600, "yearTo": -500,
+    "dateLabel": "前6世紀ごろ",
+    "region": "greece", "genres": ["folklore"],
+    "language": "古代ギリシャ語",
+    "medium": "口承(のちに寓話集として編纂)",
+    "summary": "奴隷だったと伝わるアイソーポスの名で語り継がれた動物寓話。「北風と太陽」「アリとキリギリス」など、短い物語に教訓を添える形で世界中に広まった。",
+    "quote": "ゆっくりでも、休まず進む者が勝つ。(「ウサギとカメ」の要旨)",
+    "article": "texts/aesop.html"
+  },
+  {
+    "id": "jataka",
+    "title": "ジャータカ(本生譚)",
+    "titleOriginal": "Jātaka",
+    "yearFrom": -300, "yearTo": -100,
+    "dateLabel": "前3世紀ごろ〜",
+    "region": "india", "genres": ["folklore", "religion"],
+    "language": "パーリ語",
+    "medium": "口伝(のちに貝葉写本)",
+    "summary": "ブッダが前世で動物や人として善い行いを積んだ物語を集めた仏典。インドの民話を取り込み、547話が伝わる。日本の「月のうさぎ」の話のもとにもなった。",
+    "quote": "飢えた旅人のために、うさぎは自ら火に身を投じた。(兎本生の要旨)",
+    "article": "texts/jataka.html"
+  },
+  {
+    "id": "new-testament",
+    "title": "新約聖書",
+    "titleOriginal": "Καινὴ Διαθήκη",
+    "yearFrom": 50, "yearTo": 150,
+    "dateLabel": "1世紀後半〜2世紀",
+    "region": "west-asia", "genres": ["religion"],
+    "language": "コイネー・ギリシャ語",
+    "medium": "パピルス・羊皮紙の写本",
+    "summary": "イエスの生涯と教えを伝える四つの福音書、使徒言行録、パウロらの手紙、ヨハネの黙示録の27文書からなるキリスト教の聖典。",
+    "quote": "自分を愛するように、あなたの隣人を愛しなさい。(要旨)",
+    "article": "texts/new-testament.html"
+  },
+  {
+    "id": "nihon-ryoiki",
+    "title": "日本霊異記",
+    "titleOriginal": "日本国現報善悪霊異記",
+    "yearFrom": 822, "yearTo": 822,
+    "dateLabel": "9世紀初め(822年ごろ)",
+    "region": "japan", "genres": ["folklore", "religion"],
+    "language": "漢文",
+    "medium": "写本",
+    "summary": "薬師寺の僧・景戒がまとめた日本最古の仏教説話集。善い行いや悪い行いの報いがこの世で現れる不思議な話を、各地の人々の暮らしとともに伝える。",
+    "quote": "善い行いにも悪い行いにも、報いは必ずこの世に現れる。(序の要旨)",
+    "article": "texts/nihon-ryoiki.html"
   }
 ]
