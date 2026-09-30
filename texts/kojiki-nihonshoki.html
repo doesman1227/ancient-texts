@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>古事記・日本書紀 ｜ 古いほん</title>
+<meta name="description" content="日本最古の歴史書「古事記」と「日本書紀」の解説。成立の経緯、神代から歴代天皇に至る内容、写本の伝来と近世の研究、後世への影響をまとめる。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#ffffff;--ink:#141414;--muted:#8f8f8f;--faint:#b9b9b9;--line:#e7e7e7;--hover:#f6f6f6;--c:#44618f}
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#0d0d0d;--ink:#f1f1f1;--muted:#8a8a8a;--faint:#5a5a5a;--line:#232323;--hover:#161616;--c:#7190c0}
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-font-smoothing:antialiased}
+  body{font-family:"Noto Sans JP",system-ui,sans-serif;background:var(--bg);color:var(--ink);
+    line-height:2;letter-spacing:.01em;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{max-width:40rem;margin:0 auto;padding:0 16px}
+  @media (min-width:640px){.wrap{padding:0 32px}}
+  header.site{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding:calc(env(safe-area-inset-top) + 20px) 0 20px;font-size:.75rem}
+  .back{color:var(--muted);text-decoration:none;letter-spacing:.06em}
+  .back:hover{color:var(--ink)}
+  .hero{padding:48px 0 32px;border-bottom:1px solid var(--line)}
+  .kicker{font-size:.7rem;letter-spacing:.2em;color:var(--c);margin-bottom:12px}
+  h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(1.6rem,5.5vw,2.3rem);line-height:1.5}
+  .orig{font-size:.8rem;color:var(--faint);margin-top:4px}
+  table.facts{width:100%;border-collapse:collapse;margin:28px 0 8px;font-size:.84rem}
+  .facts th{width:7em;text-align:left;font-weight:500;color:var(--muted);vertical-align:top;padding:8px 12px 8px 0;
+    border-bottom:1px solid var(--line)}
+  .facts td{padding:8px 0;border-bottom:1px solid var(--line)}
+  article h2{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.2rem;margin:48px 0 14px;
+    padding-left:12px;border-left:3px solid var(--c)}
+  article p{margin:0 0 1.1em}
+  blockquote{font-family:"Noto Serif JP",serif;margin:18px 0;padding:14px 18px;background:var(--hover);
+    border-left:2px solid var(--c)}
+  blockquote .src{display:block;margin-top:6px;font-family:"Noto Sans JP",sans-serif;font-size:.75rem;color:var(--muted)}
+  ul.books{list-style:none;font-size:.88rem}
+  ul.books li{padding:6px 0;border-bottom:1px solid var(--line)}
+  nav.pager{display:flex;justify-content:space-between;gap:16px;margin:56px 0 24px;font-size:.85rem}
+  nav.pager a{text-decoration:none;border-bottom:1px solid var(--muted)}
+  nav.pager .next{margin-left:auto;text-align:right}
+  footer.site{border-top:1px solid var(--line);padding:28px 0 calc(env(safe-area-inset-bottom) + 40px);
+    font-size:.78rem;color:var(--muted);display:grid;gap:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="back" href="../">← 古いほん</a>
+    <a class="back" href="../../">m-note トップ</a>
+  </header>
+
+  <section class="hero">
+    <p class="kicker">日本 ・ 神話・叙事詩 / 歴史 ・ 712年/720年</p>
+    <h1>古事記・日本書紀</h1>
+    <p class="orig">古事記/日本書紀</p>
+    <table class="facts">
+      <tr><th>年代</th><td>古事記は和銅5年(712)成立、日本書紀は養老4年(720)成立</td></tr>
+      <tr><th>地域</th><td>日本(大和朝廷)</td></tr>
+      <tr><th>言語と文字</th><td>古事記は変体漢文(音訓交用)、日本書紀は漢文</td></tr>
+      <tr><th>原典の媒体</th><td>巻物(写本として伝来。原本は現存しない)</td></tr>
+      <tr><th>現存状況</th><td>古事記の最古の写本は南北朝期の真福寺本、日本書紀は成立後まもない時期の写本断片から複数系統の写本が伝わる</td></tr>
+    </table>
+  </section>
+
+  <article>
+    <h2>どんな文献か</h2>
+    <p>古事記と日本書紀は、いずれも8世紀初めの奈良時代に編まれた、日本に現存する最古級の歴史書である。二つを合わせて「記紀」と呼び習わす。古事記は上・中・下の3巻からなり、太安万侶が稗田阿礼の誦習した内容を書き留めて和銅5年(712)に元明天皇へ献上したと、序文に記されている。日本書紀は舎人親王らの編纂により養老4年(720)に完成した全30巻(このほかに系図1巻があったと伝わるが現存しない)の大部な書物で、以後の朝廷が編纂した六国史のうち最初のものにあたる。両書はともに神々の時代である「神代」から説き起こし、歴代の天皇の事績へと続く構成を持つ点で共通するが、文体や性格は大きく異なる。古事記は物語的な色合いが濃く、日本語の音を漢字で表す工夫を凝らした文章で書かれているのに対し、日本書紀は正式な漢文で書かれ、中国の史書を意識した編年体をとる。同じ時代に近い時期に編まれながら、なぜ性格の異なる二つの書物が並び立つことになったのかは、古代の史書編纂のあり方を考えるうえで興味深い問いであり続けている。分量の面でも、古事記が3巻にまとめられているのに対し日本書紀は30巻に及び、扱う年代も日本書紀の方が持統天皇の代まで下るなど、両書の射程には違いがある。後世の人々がこの二つをまとめて「記紀」と呼び、しばしば併せて参照してきたこと自体が、性格の異なる二つの書物が互いを補い合う関係にあったことを示しているとも言える。</p>
+
+    <h2>成立の背景</h2>
+    <p>古事記の序文によれば、天武天皇の時代に、諸家に伝わる帝紀(天皇の系譜)や旧辞(神話・伝承)に誤りや異同が多いことを憂えた天皇が、稗田阿礼に命じてこれらを誦み習わせたという。その後、元明天皇の代になって、太安万侶がこの誦習内容を筆録し、和銅5年(712)に完成をみた。一方の日本書紀は、天武天皇の皇子である舎人親王を中心とする編纂事業として進められ、養老4年(720)に完成し朝廷に奏上された。両書がほぼ同じ時期に、同じ天武朝を起点として編まれた背景には、律令国家としての体制を整えつつあった当時の朝廷が、天皇による統治の正統性を歴史として明文化しておく必要に迫られていたという事情があったと考えられている。古事記が国内向けの、いわば皇室の由来を語る書として、日本書紀が中国など対外的にも通用する正史として編まれたのではないかとする見方もあるが、両書の編纂目的の違いについては諸説あり、単純には割り切れない部分も残されている。稗田阿礼という人物についても、性別や具体的な経歴を伝える確かな史料は乏しく、その実像には不明な点が多い。それでも、口頭で伝えられてきた帝紀・旧辞を一度誦習という形で整理し直し、そのうえで文字に書き起こすという二段階の作業を経ていること自体が、この時代の朝廷がいかに正確な由来の記録を必要としていたかを物語っている。</p>
+
+    <h2>内容</h2>
+    <p>古事記上巻は神代の物語にあてられ、天地の初めに続いて、イザナキ・イザナミの二神による国生みと神生み、イザナミの死とイザナキの黄泉国訪問、禊から生まれたアマテラス・スサノオら三貴子、スサノオの乱暴とアマテラスの天岩戸隠れ、出雲でのヤマタノオロチ退治、オオクニヌシの国造りと国譲り、そしてニニギの天孫降臨へと物語が進む。中巻・下巻では初代神武天皇から推古天皇までの歴代天皇の事績が語られ、ヤマトタケルの物語などもここに含まれる。日本書紀もほぼ同様の範囲を扱うが、神代から持統天皇の時代までを編年体で記し、一つの出来事について複数の伝承を並べて「一書に曰く」という形で異伝を書き添える手法をとっている点が特徴である。これにより、同じ神話であっても細部の異なる複数の語り方が併存する様子を読み取ることができ、記紀全体を通じて、一つの決まった筋書きだけでなく、伝承の幅そのものを伝える構成になっている。国譲りの場面では、アマテラスの側から遣わされた使者がオオクニヌシに国の統治を委ねるよう求め、最終的に大きな宮を築くことと引き換えに国を譲る筋書きが語られ、これが天孫降臨へとつながっていく。系譜や出来事の順序は古事記・日本書紀とも原典の並びに従って記されており、誰が誰から生まれたかという系譜関係も物語の骨格をなす重要な要素になっている。</p>
+
+    <h2>発見と解読</h2>
+    <p>古事記も日本書紀も、成立当初の原本は現存しておらず、後世に書き写された写本によって内容が伝えられている。古事記の写本で現存最古とされるのは、南北朝時代の応安4年から5年(1371〜72年)にかけて僧賢瑜が書写した真福寺本であり、国宝に指定されている。中世を通じて古事記はあまり広く読まれた書物ではなく、日本書紀に比べると研究の蓄積も限られていたが、江戸時代に入ると国学者による本格的な研究が進んだ。なかでも本居宣長は寛政10年(1798)に大著『古事記伝』を完成させ、それまで読解の難しかった古事記本文を丹念に読み解いて、後の古代文学研究・古代史研究の基礎を築いた。近代に入ると、津田左右吉が古事記・日本書紀に記された神話や伝承を史料批判の観点から検討し、記述の性格や成立過程をめぐる議論に大きな影響を与えた。両書の成立をめぐっては、内容の史実性や編纂の実態について諸説が唱えられており、慎重な扱いが必要とされる論点も少なくない。真福寺本以外にも、卜部氏に伝わった系統の写本(卜部本)など古事記には複数の伝本があり、系統によって仮名や訓点の付け方に違いが見られる。日本書紀についても各地に伝わる写本同士を比べ合わせ、本文の異同を確かめる作業が、現在に至るまで研究の土台となっている。古くから古事記を偽書ではないかと疑う見方が示されたこともあったが、現在では奈良時代の成立とする見方が学界で広く受け入れられている。</p>
+
+    <h2>有名な一節</h2>
+    <blockquote>天地(あめつち)初めて発(ひら)けし時、高天原(たかまのはら)に成れる神の名は……<span class="src">古事記・上巻冒頭・要旨</span></blockquote>
+    <p>古事記の本文は、天と地がまだ分かれたばかりのころ、高天原に神々が次々と現れたと語り出すところから始まる。世界の始まりをまず神々の出現として描き、そこから男女の対をなす神々が生まれ、やがてイザナキ・イザナミという二神が国土や自然物を生み出していく神話へとつながっていく構成である。特定の造物主が一挙に世界を創造するという語り方ではなく、神々が次々に「成る」というかたちで世界が徐々に姿を整えていく点に、古事記の宇宙観の特徴が表れている。この冒頭部分は、古事記全体の語り口を象徴する一節として、後世さまざまな形で引用され、参照されてきた。原文は漢字の音と訓を織り交ぜた独特の表記で記されており、読み下し方についても研究者によって細部の違いがある。「あめつち」「たかまのはら」といった訓読みが定着したのは、本居宣長をはじめとする近世以降の国学者たちが、漢字の連なりから元の日本語の音を丹念に復元していった成果によるところが大きい。文字づらだけを追うのではなく、その背後にある古代の話し言葉を聞き取ろうとする姿勢が、この一節の読解の歴史そのものを形づくってきたと言える。</p>
+
+    <h2>後世への影響</h2>
+    <p>古事記と日本書紀は、日本の神話・歴史認識の骨格を形づくる文献として、後の時代に長く読み継がれてきた。日本書紀はその後に編まれた続日本紀以下の史書とあわせて六国史と呼ばれる国家編纂の正史群の出発点となり、朝廷や貴族社会における歴史認識の基盤であり続けた。古事記は中世には陰に隠れがちであったが、江戸時代の国学の隆盛とともに再評価され、本居宣長の研究を経て、近代の国文学・神道研究においても重要な位置を占めるようになった。近代以降は、記紀に記された神話が国家の由来を語る物語として様々な文脈で参照される一方、学問的には史料としての性格や成立過程をめぐる検討が重ねられてきた。神社の由緒や地名伝承、文学・美術など、記紀の神話や説話が日本文化のさまざまな場面に影響を与えてきたことも見逃せない。今日でも、古代日本の神話や古代史を語るうえで、記紀は避けて通れない基本文献であり続けている。全国各地の神社に伝わる祭神や由緒の多くも、記紀に登場する神々やその子孫に結び付けて語られており、地域の信仰と記紀の神話とが長い時間をかけて結びついてきたことがうかがえる。近代以降、記紀の神話は歴史教育や国家の物語づくりに利用された時期もあり、その扱われ方自体が時代ごとの社会のあり方を映す鏡でもあった。神話としての性格と歴史書としての性格をあわせ持つ記紀を、どのように読み、位置づけるかという問いは、現在の研究においても引き続き議論の対象になっている。</p>
+
+    <h2>もっと知るには</h2>
+    <ul class="books">
+      <li>倉野憲司校注『古事記』(岩波文庫)</li>
+      <li>次田真幸全訳注『古事記』上・中・下(講談社学術文庫)</li>
+      <li>宇治谷孟『日本書紀(上)(下) 全現代語訳』(講談社学術文庫)</li>
+    </ul>
+  </article>
+
+  <nav class="pager" aria-label="前後の文献">
+    <a href="heart-sutra.html">← 前:般若心経</a>
+    <a class="next" href="nihon-ryoiki.html">次:日本霊異記 →</a>
+  </nav>
+
+  <footer class="site">
+    <p>専門家ではない個人が、学びながらつくっている個人的なまとめです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="../">← 古いほん</a> ・ <a class="back" href="../../">m-note トップ</a></p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>イリアス ｜ 古いほん</title>
+<meta name="description" content="ホメロス作と伝わる古代ギリシャの叙事詩「イリアス」の解説。トロイア戦争を舞台にした物語の構成、ホメロス問題と口承の伝統、有名な一節、後世への影響。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#ffffff;--ink:#141414;--muted:#8f8f8f;--faint:#b9b9b9;--line:#e7e7e7;--hover:#f6f6f6;--c:#6f8499}
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#0d0d0d;--ink:#f1f1f1;--muted:#8a8a8a;--faint:#5a5a5a;--line:#232323;--hover:#161616;--c:#8ea3b8}
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-font-smoothing:antialiased}
+  body{font-family:"Noto Sans JP",system-ui,sans-serif;background:var(--bg);color:var(--ink);
+    line-height:2;letter-spacing:.01em;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{max-width:40rem;margin:0 auto;padding:0 16px}
+  @media (min-width:640px){.wrap{padding:0 32px}}
+  header.site{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding:calc(env(safe-area-inset-top) + 20px) 0 20px;font-size:.75rem}
+  .back{color:var(--muted);text-decoration:none;letter-spacing:.06em}
+  .back:hover{color:var(--ink)}
+  .hero{padding:48px 0 32px;border-bottom:1px solid var(--line)}
+  .kicker{font-size:.7rem;letter-spacing:.2em;color:var(--c);margin-bottom:12px}
+  h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(1.6rem,5.5vw,2.3rem);line-height:1.5}
+  .orig{font-size:.8rem;color:var(--faint);margin-top:4px}
+  table.facts{width:100%;border-collapse:collapse;margin:28px 0 8px;font-size:.84rem}
+  .facts th{width:7em;text-align:left;font-weight:500;color:var(--muted);vertical-align:top;padding:8px 12px 8px 0;
+    border-bottom:1px solid var(--line)}
+  .facts td{padding:8px 0;border-bottom:1px solid var(--line)}
+  article h2{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.2rem;margin:48px 0 14px;
+    padding-left:12px;border-left:3px solid var(--c)}
+  article p{margin:0 0 1.1em}
+  blockquote{font-family:"Noto Serif JP",serif;margin:18px 0;padding:14px 18px;background:var(--hover);
+    border-left:2px solid var(--c)}
+  blockquote .src{display:block;margin-top:6px;font-family:"Noto Sans JP",sans-serif;font-size:.75rem;color:var(--muted)}
+  ul.books{list-style:none;font-size:.88rem}
+  ul.books li{padding:6px 0;border-bottom:1px solid var(--line)}
+  nav.pager{display:flex;justify-content:space-between;gap:16px;margin:56px 0 24px;font-size:.85rem}
+  nav.pager a{text-decoration:none;border-bottom:1px solid var(--muted)}
+  nav.pager .next{margin-left:auto;text-align:right}
+  footer.site{border-top:1px solid var(--line);padding:28px 0 calc(env(safe-area-inset-bottom) + 40px);
+    font-size:.78rem;color:var(--muted);display:grid;gap:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="back" href="../">← 古いほん</a>
+    <a class="back" href="../../">m-note トップ</a>
+  </header>
+
+  <section class="hero">
+    <p class="kicker">ギリシャ ・ 神話・叙事詩 ・ 前8世紀ごろ</p>
+    <h1>イリアス</h1>
+    <p class="orig">Ἰλιάς</p>
+    <table class="facts">
+      <tr><th>年代</th><td>前8世紀ごろ成立とする見方が広いが、時期は諸説ある</td></tr>
+      <tr><th>地域</th><td>ギリシャ語圏(小アジア西岸のイオニア地方との関わりが深いとされる)</td></tr>
+      <tr><th>言語と文字</th><td>古代ギリシャ語(イオニア方言を基調に諸方言が混在)、ダクテュロス・ヘクサメトロスの韻律</td></tr>
+      <tr><th>原典の媒体</th><td>長く口承で伝えられ、のちにギリシャ文字で記録・書写</td></tr>
+      <tr><th>現存状況</th><td>パピルス断片多数、中世ビザンティンの写本を通じて全文が伝存</td></tr>
+    </table>
+  </section>
+
+  <article>
+    <h2>どんな文献か</h2>
+    <p>イリアスは、全24歌・約15,700行からなる古代ギリシャの叙事詩である。詩行はダクテュロス・ヘクサメトロスと呼ばれる韻律で統一され、朗誦を前提にした構成を持つ。伝統的にホメロスの作とされてきたが、ホメロスという人物が実在したのか、実在したとして一人の作者にどこまで帰せるのかは「ホメロス問題」として長く議論されてきており、今も諸説がある。20世紀にミルマン・パリーとアルバート・ロードが進めた研究では、他地域の口承叙事詩の調査を通じて、イリアスの文体に見られる定型句や決まり文句の多用が、長大な物語を即興で語り継ぐための口承の技法であることが示された。「足の速いアキレウス」「暁の女神ばら色の指」といった繰り返し現れる修飾句は、単なる飾りではなく、語り手が韻律に合わせて瞬時に詩行を組み立てるための道具であったと考えられている。つまりこの作品は、特定の個人が机の上で書き下ろしたというより、長い口承の伝統の到達点として、ある時点で今の形にまとまったと考えるのが妥当とされている。題名の「イリアス」は、トロイアの別名イリオスに由来し、「イリオスをめぐる歌」の意である。</p>
+
+    <h2>成立の背景</h2>
+    <p>物語の舞台となるトロイア戦争は、ギリシャ人にとって遠い過去の出来事として語り継がれてきた伝説であり、実際にどこまで史実に基づくかは分かっていない。19世紀後半、ハインリヒ・シュリーマンが小アジア北西部のヒサルルクの丘を発掘し、複数の層からなる都市遺跡を確認したことで、トロイアに比定される実在の都市があった可能性が広く注目されるようになった。ただし、遺跡の実態と叙事詩の記述がどこまで一致するかについては議論が続いている。イリアス自体の成立時期は前8世紀ごろとする見方が比較的広く受け入れられているが、口承で蓄積されてきた物語の要素がいつ、どのように今の形にまとめられたのかは諸説あり、文字による記録が始まった時期についても定まった答えはない。全体を24巻に区切る現在の構成は、のちの時代、アレクサンドリアの学者たちの編集によるものとされ、作品そのものの成立とは別の段階で加えられた区分と考えられている。また、イリアスとオデュッセイアの間には、主題や語彙、世界観にわずかな違いも指摘されており、二つの作品が同一の作者による、あるいは同時期に成立したものかどうかについても意見が分かれている。こうした細部の違いをどう評価するかによって、成立事情の推測は今も揺れ動いている。</p>
+
+    <h2>内容</h2>
+    <p>イリアスが描くのは、10年に及ぶトロイア戦争のうち、終盤のわずか約50日間である。物語は、ギリシャ軍の総大将アガメムノンと勇将アキレウスが、捕虜の女性ブリセイスの扱いをめぐって激しく対立する場面から始まる。屈辱を受けたアキレウスは戦線から退き、その不在によってギリシャ軍は苦境に陥る。事態が動くのは、アキレウスの親友パトロクロスが彼の武具を借りて出陣し、トロイア方の勇将ヘクトルに討たれてからである。友の死に怒りと悲しみを爆発させたアキレウスは再び戦場に戻り、ヘクトルを討ち取って遺体を陣営に持ち帰る。物語は、老いたトロイア王プリアモスが単身アキレウスの陣を訪れ、息子ヘクトルの遺体の返還を涙ながらに乞う場面で幕を閉じる。よく知られる「トロイの木馬」の挿話は、この作品自体には含まれておらず、別の伝承や後代の作品によって伝えられているものである点は留意しておきたい。物語の随所には、両軍の勇将たちの一騎討ちや、神々がそれぞれに贔屓する人間を助けて戦況に介入する場面も織り込まれており、人間同士の争いが天上の神々の思惑とも絡み合いながら進んでいく構成になっている。</p>
+
+    <h2>発見と解読</h2>
+    <p>イリアスは古代を通じてギリシャ語圏で広く読み継がれ、学校教育の中心にも据えられてきたため、他の多くの古代文献のように一度失われて再発見されたわけではない。前3世紀以降、エジプトのアレクサンドリアの学者たちが多くの写本を集めて校訂し、全体を24巻に整理する作業を進めたことが、後世まで伝わる本文の基礎となった。中世にはビザンティン帝国で写本が書き継がれ、そのうちの一つ、10世紀の写本「ヴェネトゥス・A」には本文だけでなく古代の注釈(スコリア)も豊富に書き込まれており、近代の校訂作業にとって重要な資料となっている。近代以降は、19世紀から20世紀にかけてエジプトの遺跡から出土した大量のパピルス断片が発見され、写本の系統や本文の異同を確かめるための新たな手がかりを提供した。こうした写本とパピルスの比較検討によって、現在私たちが読むことのできるテキストの形が少しずつ確定されてきた。近代のヨーロッパでは、18世紀末にドイツの文献学者フリードリヒ・アウグスト・ヴォルフが、イリアスは単一の作者による一貫した作品というより、複数の口承の断片が後から統合されたものではないかという疑問を学問的に提起し、これがホメロス問題を本格的な研究対象へと押し上げる契機となった。</p>
+
+    <h2>有名な一節</h2>
+    <blockquote>怒りを歌え、女神よ。アキレウスの、あの激しい怒りを。<span class="src">第1歌冒頭・要旨(原語冒頭「メーニン アエイデ、テア」)</span></blockquote>
+    <p>イリアスは、主人公アキレウスの「怒り」という一語から歌い出される。詩人は女神(ムーサ)に呼びかけ、その怒りがギリシャ軍に多くの苦しみと死をもたらしたことを語ってほしいと願う形で物語を始める。作品全体が、この一つの感情がもたらした連鎖を描いていることを思えば、冒頭の一語がそのまま主題そのものを示していると言ってよい。対して、最終歌にあたる第24歌では、我が子を殺した相手であるアキレウスの前に膝をつき、その手に口づけて遺体の返還を乞うプリアモス王の姿が描かれる。怒りから始まった物語が、敵味方を超えた人間としての悲しみと赦しの場面で結ばれるこの構成は、イリアスが単なる戦争の記録ではなく、人の感情の起伏そのものを描いた作品であることをよく示している。アキレウスがプリアモスの願いを受け入れ、二人がともに涙を流す場面は、勝者と敗者、若者と老人という隔たりを超えて、人が人の死を悼むという普遍的な感情に物語が着地することを示しており、全24歌の終着点として読者に深い余韻を残す。</p>
+
+    <h2>後世への影響</h2>
+    <p>イリアスは、オデュッセイアと並んで古代ギリシャの文学・教育・価値観の基盤となり、悲劇作家たちや歴史家、哲学者たちに繰り返し参照された。ローマではウェルギリウスの『アエネイス』が、イリアスとオデュッセイアの両方を踏まえて構想されており、西洋の叙事詩の伝統全体がこの作品を出発点の一つとしている。中世以降もヨーロッパの学問と教養の中で古典として読み継がれ、近代に入ってからは各国語への翻訳が相次いだ。日本でも明治以降、複数の訳者によって翻訳が重ねられ、今日まで読み継がれている。「アキレス腱」という言葉に名を残すアキレウスの逸話など、作品に由来する言い回しや人物像は、文学や日常の表現の中にも広く溶け込んでいる。シュリーマンによるトロイア発掘の反響もあいまって、イリアスは今なお、戦争と怒り、名誉と死をめぐる人間の姿を描いた古典として読まれ続けている。近現代の文学や映画、演劇においても、トロイア戦争や登場人物たちの物語は繰り返し翻案の題材とされ、古代の一叙事詩が持つ主題の普遍性を裏づけている。</p>
+
+    <h2>もっと知るには</h2>
+    <ul class="books">
+      <li>ホメロス著・松平千秋訳『イリアス』上・下(岩波文庫)</li>
+      <li>高津春繁『ホメーロスの英雄叙事詩』(岩波新書)</li>
+    </ul>
+  </article>
+
+  <nav class="pager" aria-label="前後の文献">
+    <a href="hebrew-bible.html">← 前:ヘブライ語聖書</a>
+    <a class="next" href="odyssey.html">次:オデュッセイア →</a>
+  </nav>
+
+  <footer class="site">
+    <p>専門家ではない個人が、学びながらつくっている個人的なまとめです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="../">← 古いほん</a> ・ <a class="back" href="../../">m-note トップ</a></p>
+  </footer>
+</div>
+</body>
+</html>
