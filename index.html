@@ -53,17 +53,6 @@
   .chip .sw{display:inline-block;width:.55em;height:.55em;border-radius:50%;margin-right:.45em;
     vertical-align:.08em;background:var(--c)}
 
-  .overview{padding:28px 0 8px}
-  .ov-title{font-size:.68rem;letter-spacing:.2em;color:var(--muted);margin-bottom:10px}
-  .ov-track{position:relative;border-top:1px solid var(--line);padding-top:10px}
-  .ov-row{position:relative;height:9px;margin-bottom:3px}
-  .ov-bar{position:absolute;top:0;height:9px;border-radius:2px;background:var(--c);opacity:.85;
-    display:block;min-width:4px}
-  .ov-bar:hover,.ov-bar:focus-visible{opacity:1;outline:1px solid var(--ink)}
-  .ov-scale{position:relative;height:1.4em;margin-top:6px;font-size:.62rem;color:var(--faint)}
-  .ov-scale span{position:absolute;transform:translateX(-50%);white-space:nowrap}
-  .ov-scale span:first-child{transform:none}
-  .ov-scale span:last-child{transform:translateX(-100%)}
 
   .timeline{position:relative;padding:32px 0 48px 28px}
   .timeline::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:1px;background:var(--line)}
@@ -117,12 +106,6 @@
   <section class="filters" aria-label="絞り込み">
     <div class="axis" id="f-region"><span class="axis-name">地域</span></div>
     <div class="axis" id="f-genre"><span class="axis-name">ジャンル</span></div>
-  </section>
-
-  <section class="overview" aria-label="全体図">
-    <p class="ov-title">全体図(前2500年〜後2000年)</p>
-    <div class="ov-track" id="ov-track"></div>
-    <div class="ov-scale" id="ov-scale"></div>
   </section>
 
   <main class="timeline" id="timeline" aria-live="polite">
@@ -205,26 +188,10 @@
           : cardHTML(item.text);
       }).join('');
     }
-    document.getElementById('ov-track').innerHTML = shown.map(function (t) {
-      var s = T.spanPercent(t);
-      return '<div class="ov-row"><a class="ov-bar" href="#' + esc(t.id) + '" title="' +
-        esc(t.title + '(' + t.dateLabel + ')') + '" aria-label="' + esc(t.title) +
-        '" style="left:' + s.left + '%;width:' + s.width + '%;--c:' + color(t.region) + '"></a></div>';
-    }).join('');
-  }
-
-  function buildScale() {
-    var total = T.RANGE.to - T.RANGE.from;
-    document.getElementById('ov-scale').innerHTML = T.TICKS
-      .filter(function (y, i) { return i % 2 === 0 || y === T.RANGE.to; })
-      .map(function (y) {
-        return '<span style="left:' + ((y - T.RANGE.from) / total * 100) + '%">' + T.formatYear(y) + '</span>';
-      }).join('');
   }
 
   buildAxis(document.getElementById('f-region'), 'regions', T.REGIONS, T.REGION_LABELS, true);
   buildAxis(document.getElementById('f-genre'), 'genres', T.GENRES, T.GENRE_LABELS, false);
-  buildScale();
 
   function highlightFromHash() {
     try {

@@ -12,7 +12,6 @@
     'religion': '宗教・経典', 'myth': '神話・叙事詩', 'folklore': '説話・昔話', 'law': '法典', 'thought': '思想', 'history': '歴史'
   };
   var TICKS = [-2500, -2000, -1500, -1000, -500, 0, 500, 1000, 1500, 2000];
-  var RANGE = { from: -2500, to: 2000 };
 
   function sortTexts(texts) {
     return texts.slice().sort(function (a, b) {
@@ -48,13 +47,6 @@
     if (year < 0) return '前' + (-year);
     if (year === 0) return '紀元';
     return '後' + year;
-  }
-
-  function spanPercent(t) {
-    var total = RANGE.to - RANGE.from;
-    var left = (t.yearFrom - RANGE.from) / total * 100;
-    var width = Math.max((t.yearTo - t.yearFrom) / total * 100, 0.6);
-    return { left: left, width: width };
   }
 
   var STRING_FIELDS = ['title', 'dateLabel', 'language', 'medium', 'summary', 'quote'];
@@ -98,9 +90,9 @@
 
   var api = {
     REGIONS: REGIONS, GENRES: GENRES, REGION_LABELS: REGION_LABELS, GENRE_LABELS: GENRE_LABELS,
-    TICKS: TICKS, RANGE: RANGE,
+    TICKS: TICKS,
     sortTexts: sortTexts, filterTexts: filterTexts, withTicks: withTicks,
-    formatYear: formatYear, spanPercent: spanPercent, validateTexts: validateTexts
+    formatYear: formatYear, validateTexts: validateTexts
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.Timeline = api;

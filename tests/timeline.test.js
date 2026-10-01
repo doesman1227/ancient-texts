@@ -45,13 +45,6 @@ test('formatYear', () => {
   assert.equal(T.formatYear(500), '後500');
 });
 
-test('spanPercent: 全範囲 -2500〜2000 に対する位置と幅', () => {
-  assert.deepEqual(T.spanPercent({ yearFrom: -2500, yearTo: 2000 }), { left: 0, width: 100 });
-  const s = T.spanPercent({ yearFrom: -250, yearTo: -250 });
-  assert.equal(s.left, 50);
-  assert.equal(s.width, 0.6);
-});
-
 const valid = () => ({
   id: 'gilgamesh', title: 'ギルガメシュ叙事詩', titleOriginal: '', yearFrom: -2100, yearTo: -1200,
   dateLabel: '前2100〜前1200年ごろ', region: 'mesopotamia', genres: ['myth'],
