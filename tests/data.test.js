@@ -11,13 +11,17 @@ test('texts.json が検証を通る', () => {
   assert.deepEqual(T.validateTexts(texts), []);
 });
 
-test('23件がそろっている', () => {
+test('39件がそろっている', () => {
   const ids = texts.map(t => t.id).sort();
   assert.deepEqual(ids, [
-    'aesop', 'analects', 'book-of-the-dead', 'dhammapada', 'edda', 'enuma-elish', 'gilgamesh', 'grimm',
-    'hammurabi', 'heart-sutra', 'hebrew-bible', 'iliad', 'jataka', 'kojiki-nihonshoki',
-    'laozi', 'lotus-sutra', 'new-testament', 'nihon-ryoiki', 'odyssey', 'pyramid-texts',
-    'rigveda', 'suttanipata', 'theogony'
+    'aesop', 'analects', 'arabian-nights', 'beowulf', 'bhagavad-gita',
+    'book-of-the-dead', 'dhammapada', 'edda', 'enuma-elish', 'genji',
+    'gilgamesh', 'grimm', 'hammurabi', 'heart-sutra', 'hebrew-bible',
+    'herodotus', 'iliad', 'jataka', 'kojiki-nihonshoki', 'konjaku',
+    'laozi', 'lotus-sutra', 'manyoshu', 'new-testament', 'nihon-ryoiki',
+    'odyssey', 'pyramid-texts', 'quran', 'republic', 'rigveda',
+    'shanhaijing', 'shiji', 'sunzi', 'suttanipata', 'taiho-ritsuryo',
+    'theogony', 'twelve-tables', 'upanishads', 'zhuangzi'
   ]);
 });
 
