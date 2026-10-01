@@ -2,17 +2,17 @@
 (function (root) {
   'use strict';
 
-  var REGIONS = ['egypt', 'mesopotamia', 'india', 'china', 'greece', 'west-asia', 'japan'];
+  var REGIONS = ['egypt', 'mesopotamia', 'india', 'china', 'greece', 'west-asia', 'japan', 'europe'];
   var GENRES = ['religion', 'myth', 'folklore', 'law', 'thought', 'history'];
   var REGION_LABELS = {
     'egypt': 'エジプト', 'mesopotamia': 'メソポタミア', 'india': 'インド', 'china': '中国',
-    'greece': 'ギリシャ', 'west-asia': '西アジア', 'japan': '日本'
+    'greece': 'ギリシャ', 'west-asia': '西アジア', 'japan': '日本', 'europe': 'ヨーロッパ'
   };
   var GENRE_LABELS = {
     'religion': '宗教・経典', 'myth': '神話・叙事詩', 'folklore': '説話・昔話', 'law': '法典', 'thought': '思想', 'history': '歴史'
   };
-  var TICKS = [-2500, -2000, -1500, -1000, -500, 0, 500, 1000];
-  var RANGE = { from: -2500, to: 1000 };
+  var TICKS = [-2500, -2000, -1500, -1000, -500, 0, 500, 1000, 1500, 2000];
+  var RANGE = { from: -2500, to: 2000 };
 
   function sortTexts(texts) {
     return texts.slice().sort(function (a, b) {
